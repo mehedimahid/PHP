@@ -57,7 +57,6 @@
 
             <label for="lname">Last name</label>
             <input type="text" name="lname" id="lname" value = "<?php echo ($lname);?>">
-            
             <button type="submit">Submit</button>
           </form>
         </div>

@@ -1,5 +1,5 @@
 <?php
-  include_once "function.php";
+include_once "function.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,24 +31,24 @@
           </p>
           <p>
             <?php
-             $fname = '';
-             $lname = '';
-             $chacked = '';
+$fname = '';
+$lname = '';
+$chacked = '';
 
-              if(isset($_REQUEST['cb1'])&& $_REQUEST['cb1'] == 1){
-                $chacked = 'checked';
-               }
-            ?>
-            <?php if(isset($_REQUEST['fname']) && !empty($_REQUEST['fname'])){ 
-              $fname =filter_input(INPUT_POST, 'fname', FILTER_SANITIZE_STRING);
-            }
-            ?>
-            <?php if(isset($_REQUEST['lname']) && !empty($_REQUEST['lname'])){ 
-              $lname =filter_input(INPUT_POST ,'lname', FILTER_SANITIZE_STRING);
-             }?>
+if (isset($_REQUEST['cb1']) && $_REQUEST['cb1'] == 1) {
+    $chacked = 'checked';
+}
+?>
+            <?php if (isset($_REQUEST['fname']) && !empty($_REQUEST['fname'])) {
+    $fname = filter_input(INPUT_POST, 'fname', FILTER_SANITIZE_STRING);
+}
+?>
+            <?php if (isset($_REQUEST['lname']) && !empty($_REQUEST['lname'])) {
+    $lname = filter_input(INPUT_POST, 'lname', FILTER_SANITIZE_STRING);
+}?>
           </p>
           <p>
-            First Name: <?php echo($fname); ?> <br>
+            First Name: <?php echo ($fname); ?> <br>
             Last Name: <?php echo ($lname); ?>
           </p>
         </div>
@@ -60,15 +60,15 @@
             <input type="text" name="fname" id="fname" value = "<?php echo ($fname); ?>" >
 
             <label for="lname">Last name</label>
-            <input type="text" name="lname" id="lname" value = "<?php echo ($lname);?>">
+            <input type="text" name="lname" id="lname" value = "<?php echo ($lname); ?>">
             <div>
-              <input type="checkbox" name="cb1" id="cb1"value="1" <?php echo($chacked)?>>
+              <input type="checkbox" name="cb1" id="cb1"value="1" <?php echo ($chacked) ?>>
               <label for="cb1" class="label-inline">Chack Box </label>
             </div>
 
             <div>
               <label for="" class = "label">Select Some Fruits</label>
-              <input type="checkbox" name="fruits[]" value="mango" <?php isFruitsCheck( 'mango')?>>
+              <input type="checkbox" name="fruits[]" value="mango" <?php isFruitsCheck('mango')?>>
               <label for="fruits" class="label-inline">Mango </label><br>
               <input type="checkbox" name="fruits[]" value="orange"<?php isFruitsCheck('orange')?>>
               <label for="fruits" class="label-inline">Orange </label><br>
