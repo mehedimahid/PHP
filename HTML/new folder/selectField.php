@@ -1,6 +1,6 @@
 <?php
-  include_once "selectFildFun.php";
-  $fruits = ['Apple', 'Banana', 'coconut', 'orange', 'Mango'];
+include_once "selectFildFun.php";
+$fruits = ['Apple', 'Banana', 'coconut', 'orange', 'Mango'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,27 +31,27 @@
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel deleniti quo      explicabo officiis atque possimus placeat, eligendi, perferendis, voluptate   nostrum et sequi vero repellat deserunt dolores ipsum natus mollitia culpa.
           </p>
           <p>
-            <?php 
-            // <!--single select -->
-              // if(isset($_REQUEST['fruits']) && $_REQUEST['fruits'] != ''){
-              //     printf("You have selected: %s", filter_input(INPUT_POST, 'fruits', FILTER_SANITIZE_STRING));
-              // } 
-              //<!--multiple select -->
-           
-            ?>
+            <?php
+// <!--single select -->
+// if(isset($_REQUEST['fruits']) && $_REQUEST['fruits'] != ''){
+//     printf("You have selected: %s", filter_input(INPUT_POST, 'fruits', FILTER_SANITIZE_STRING));
+// }
+//<!--multiple select -->
+
+?>
           </p>
           <p>
             <?php
-            //<!--multiple select -->
+//<!--multiple select -->
 
-            // print_r($_POST);
-              $selectFruits = $_POST['fruits'] ?? array();
-              // $selectFruits = filter_input(INPUT_POST, 'fruits', FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
-              $count = count($selectFruits);
-              if ($count > 0) {
-                echo "You have select: " .join(", ", $selectFruits);
-              }
-            ?>
+// print_r($_POST);
+$selectFruits = $_POST['fruits'] ?? array();
+// $selectFruits = filter_input(INPUT_POST, 'fruits', FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
+$count = count($selectFruits);
+if ($count > 0) {
+    echo "You have select: " . join(", ", $selectFruits);
+}
+?>
           </p>
         </div>
       </div>
@@ -62,7 +62,7 @@
             <!-- <select name="fruits" id="fruits"> --><!--single select -->
             <select style = "height: 200px" name="fruits[]" id="fruits" multiple><!--multiple select -->
               <option value="" disabled selected>Select Fruits</option>
-              <?php selectOption($fruits, $selectFruits); ?>
+              <?php selectOption($fruits, $selectFruits);?>
             </select>
             <button type="submit">Submit</button>
           </form>
