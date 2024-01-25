@@ -1,6 +1,15 @@
 <?php
-  include_once "selectFildFun.php";
-  $fruits = ['Apple', 'Banana', 'coconut', 'orange', 'Mango'];
+$allowedType =[
+    'image/jpg',
+    'image/png',
+    'image/jpeg'
+];
+ if($_FILES){
+     if(in_array($_FILES['photo']['type'], $allowedType) !== false){
+         move_uploaded_file($_FILES['photo']['tmp_name'], "./files/". $_FILES['photo']['name']);
+
+     }
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,40 +39,29 @@
           </h1>
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel deleniti quo      explicabo officiis atque possimus placeat, eligendi, perferendis, voluptate   nostrum et sequi vero repellat deserunt dolores ipsum natus mollitia culpa.
           </p>
-          <p>
-            <?php 
-            // <!--single select -->
-              // if(isset($_REQUEST['fruits']) && $_REQUEST['fruits'] != ''){
-              //     printf("You have selected: %s", filter_input(INPUT_POST, 'fruits', FILTER_SANITIZE_STRING));
-              // } 
-              //<!--multiple select -->
-           
-            ?>
-          </p>
-          <p>
-            <?php
-            //<!--multiple select -->
+          <pre>
+            <p>
+              <?php
+              print_r($_POST);
+              print_r($_FILES);
 
-            // print_r($_POST);
-              $selectFruits = $_POST['fruits'] ?? array();
-              // $selectFruits = filter_input(INPUT_POST, 'fruits', FILTER_SANITIZE_STRING, FILTER_REQUIRE_ARRAY);
-              $count = count($selectFruits);
-              if ($count > 0) {
-                echo "You have select: " .join(", ", $selectFruits);
-              }
-            ?>
-          </p>
+              ?>
+            </p>
+          </pre>
         </div>
       </div>
       <div class="row">
         <div class="column column-60 column-offset-20">
-          <form method="POST">
-            <label for="fruits">Select Some Fruits</label>
-            <!-- <select name="fruits" id="fruits"> --><!--single select -->
-            <select style = "height: 200px" name="fruits[]" id="fruits" multiple><!--multiple select -->
-              <option value="" disabled selected>Select Fruits</option>
-              <?php selectOption($fruits, $selectFruits); ?>
-            </select>
+          <form method="POST" enctype = "multipart/form-data">
+            <label for="fname">First Name</label>
+            <input type="text" name ="fname" id ="fname">
+
+            <label for="lname">Last Name</label>
+            <input type="text" name ="lname" id ="lname">
+
+            <label for="photo">Photo</label>
+            <input type="file" name ="photo" id ="photo"><br>
+
             <button type="submit">Submit</button>
           </form>
         </div>
