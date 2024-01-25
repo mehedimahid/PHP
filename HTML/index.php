@@ -5,9 +5,11 @@ $allowedType =[
     'image/jpeg'
 ];
  if($_FILES){
-     if(in_array($_FILES['photo']['type'], $allowedType) !== false){
-         move_uploaded_file($_FILES['photo']['tmp_name'], "./files/". $_FILES['photo']['name']);
-
+     $totalFiles = count($_FILES['photo']['name']);
+     for ($i= 0; $i< $totalFiles; $i++){
+         if(in_array($_FILES['photo']['type'][$i], $allowedType) !== false){
+             move_uploaded_file($_FILES['photo']['tmp_name'][$i], "./files/". $_FILES['photo']['name'][$i]);
+         }
      }
  }
 ?>
@@ -60,7 +62,9 @@ $allowedType =[
             <input type="text" name ="lname" id ="lname">
 
             <label for="photo">Photo</label>
-            <input type="file" name ="photo" id ="photo"><br>
+              <input type="file" name ="photo[]" id ="photo"><br>
+              <input type="file" name ="photo[]" id ="photo"><br>
+              <input type="file" name ="photo[]" id ="photo"><br>
 
             <button type="submit">Submit</button>
           </form>
@@ -69,3 +73,4 @@ $allowedType =[
     </div>
 </body>
 </html>
+
