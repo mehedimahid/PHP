@@ -10,14 +10,15 @@ echo PHP_EOL;
                 //৬.৪ - স্ট্রিং রিভার্স করা
 $length = strlen($str)-1;
 for ($i = $length; $i>=0; $i--){
-    echo $str[$i];
+//    echo $str[$i];
 }
-echo PHP_EOL;
+//echo PHP_EOL;
 
 for($i =1; $i<= strlen($str); $i++){
-    echo $str[$i * (-1)];
+//    echo $str[$i * (-1)];
 
 }
-echo PHP_EOL;
+//echo PHP_EOL;
 
-echo strrev($str);
+//echo strrev($str);
+
