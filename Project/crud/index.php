@@ -2,9 +2,9 @@
 require_once "inc/functions.php";
 $info = '';
 $task = $_GET['task'] ?? 'report';
-if ( 'seed' == $task ) {
+if('seed' ==$task){
     seed();
-    $info = "Seeding is complete";
+    $info = 'Seeding  is Complate';
 }
 ?>
 
@@ -43,7 +43,7 @@ if ( 'seed' == $task ) {
                 <?php generateReport(); ?>
             </div>
         </div>
-    <?php endif; ?>
+    <?php endif;?>
 </div>
 </body>
 </html>
