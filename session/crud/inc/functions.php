@@ -1,4 +1,5 @@
 <?php
+session_start();
 define('DB_NAME', './data/db.txt');
 function seed()
 {
@@ -46,15 +47,21 @@ function generateReport()
         <tr>
             <th>Name</th>
             <th>Roll</th>
+            <?php if(isAdmin()||isEditor()):?>
             <th width="25%">Action</th>
+            <?php endif;?>
         </tr>
         <?php
-foreach ($students as $student) {
+            foreach ($students as $student) {
         ?>
            <tr>
                <td><?php printf("%s %s", $student["fname"], $student['lname']);?></td>
                <td><?php printf("%s ", $student["roll"]);?></td>
+               <?php if(isAdmin()): ?>
                <td><?php printf('<a href="../index.php?task=edit&id=%s">Edit</a> | <a class="delete" href="../index.php?task=delete&id=%s">Delete</a>', $student['id'], $student['id'])?></td>
+               <?php elseif(isEditor()):?>
+               <td><?php printf('<a href="../index.php?task=edit&id=%s">Edit</a>', $student['id'])?></td>
+                <?php endif;?>
            </tr>
            <?php
 
@@ -144,5 +151,19 @@ function deleteStudent($id){
     file_put_contents(DB_NAME, $serializeData, LOCK_EX);
 
 }
+
+function isAdmin(){
+    return "admin"==$_SESSION["role"];
+}
+
+function isEditor(){
+    return "editor" == $_SESSION["role"];
+
+}
+function hasLogIn(){
+    return(isAdmin()||isEditor());
+}
+
+
 ?>
 
