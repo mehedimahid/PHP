@@ -72,7 +72,7 @@ if(isset($_GET["logout"])){
         ?>
     </div>
   </div>
-  <div class="row" style="...">
+  <div class="row" style="margin-top:100px;">
     <div class="column column-60 column-offset-20">
       <?php 
       if($error){

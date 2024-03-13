@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<div style="...">
+<div style="border-bottom: 1px solid; border-color:#eee; padding-bottom: 30px; margin-bottom:30px;">
     <div class="float-left">
         <p>
             <a href="../../index.php?task=report">All Students</a>
