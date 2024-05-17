@@ -33,7 +33,7 @@ class RGB
         if ($this->color) {
             // $color =sscanf($this->color, '%02x%02x%02x');
             // print_r($color);
-            list($this->red, $this->green, $this->blue) = sscanf($this->color, '%02x%02x%02x');
+            list($this->red, $this->green, $this->blue) = sscanf($this->color, '%02x%02x%02x');//2ghor hexadecimale
         }else{
           list($this->red, $this->green, $this->blue) = array(0,0,0);
 
@@ -52,6 +52,6 @@ class RGB
 
 }
 
-$myColor = new RGB("");
+$myColor = new RGB("262626");
 // $myColor->readRGBColor();
 echo($myColor->getBlue());
