@@ -4,7 +4,7 @@ class MathC
     static $number;
     public static function fibonacci($n)
     {
-        self::$number = $n;//no error
+        self::$number = $n; //no error
         // $this->$number = $n;//PHP Fatal error:  Uncaught Error: Using $this when not in object context
 
         echo "Fibonacci series up to {$n}\n";
