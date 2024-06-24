@@ -27,7 +27,7 @@ $fc2 = clone $fc1;
 print_r($fc1);
 print_r($fc2);
 
-$fc2-> updateColor("Green");
+$fc2->updateColor("Green");
 print_r($fc1);
 print_r($fc2);
 
