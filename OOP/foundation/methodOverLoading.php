@@ -1,4 +1,5 @@
 <?php
+
 class MotorCycle
 {
     public $parameters;
@@ -20,27 +21,39 @@ class MotorCycle
     {
         $this->parameters[$name] = $value;
     }
-    function __isset($name){
-        if(!isset($this->parameters[$name])){
+
+    function __isset($name)
+    {
+        if (!isset($this->parameters[$name])) {
             echo "{$name} Not Found!!\n";
             return false;
-        }else{
+        } else {
             return true;
         }
     }
-    function __unset( $name){
+
+    function __unset($name)
+    {
         print_r($this->parameters);
         unset($this->parameters[$name]);
         print_r($this->parameters);
     }
+
+    function __call($name, $arguments)
+    {
+        if ($name) {
+            if ($arguments) {
+                echo "I am running at {$arguments[0]}\n";
+            } else {
+                echo "I am running\n";
+            }
+        }
+    }
+    static function __callStatic($name, $arguments)
+    {
+        echo "Static Call\n";
+    }
 }
-$pulser = new MotorCycle("150cc", "15Ltr","40kmpl");
-//$pulser->parameters['displacement'] = "150cc";
-//$pulser->parameters['capacity'] = "40kmpl";
-//$pulser->parameters['mileage'] = "40kmpl";
-//$pulser->displacement;
-//$pulser->mileage;
-if(isset($pulser->tyreSize)){
-    echo $pulser->tyreSize;
-}
-unset($pulser->mileage);
+//MotorCycle::wash();
+$pulser = new MotorCycle("150cc", "15Ltr", "40kmpl");
+$pulser->run();
