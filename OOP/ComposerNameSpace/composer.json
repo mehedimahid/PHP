@@ -1,0 +1,16 @@
+{
+    "name": "user/composer-name-space",
+    "type": "project",
+    "authors": [
+        {
+            "name": "mehedimahid",
+            "email": "53916831+mehedimahid@users.noreply.github.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Astronomy\\Planets\\": "Planets"
+        }
+    },
+    "require": {}
+}
