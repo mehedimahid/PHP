@@ -1,5 +1,5 @@
 <?php
-namespace Astronomy;
+namespace Astronomy\Planets;
 class Planet
 {
     function getName(){
