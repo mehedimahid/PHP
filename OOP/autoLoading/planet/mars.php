@@ -1,5 +1,5 @@
 <?php
-namespace Another;
+//namespace Another;
 
 class Planet_Mars
 {
