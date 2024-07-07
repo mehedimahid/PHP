@@ -24,6 +24,7 @@ class ComposerStaticInit7fe5fa78d9037a0d9f754f05678ff9c0
         'Astronomy\\Planets\\Earth' => __DIR__ . '/../..' . '/Planets/Earth.php',
         'Astronomy\\Planets\\Mars' => __DIR__ . '/../..' . '/Planets/Mars.php',
         'Astronomy\\Planets\\Planet' => __DIR__ . '/../..' . '/Planets/Planet.php',
+        'Astronomy\\Planets\\Pluto' => __DIR__ . '/../..' . '/Planets/Pluto.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
